@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\PenyewaController;
+use App\Http\Controllers\KontrakSewaController;
+use App\Http\Controllers\PembayaranController;
+
+// Dashboard/Home
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+// Resource routes untuk CRUD Kamar
+Route::resource('kamar', KamarController::class);
+
+// Resource routes untuk CRUD Penyewa
+Route::resource('penyewa', PenyewaController::class);
+
+// Resource routes untuk CRUD Kontrak Sewa
+Route::resource('kontrak-sewa', KontrakSewaController::class);
+
+// Resource routes untuk CRUD Pembayaran
+Route::resource('pembayaran', PembayaranController::class);
